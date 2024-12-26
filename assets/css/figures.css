@@ -1,0 +1,434 @@
+#figuresCarousel {
+  height: calc(100vh - 76px);
+  background-color: var(--light-bg-main);
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  opacity: 0;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.figure-content {
+  height: 100%;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.figure-text {
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.figure-text h2 {
+  color: var(--light-bg-nav);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.figure-text p {
+  color: var(--light-bg-nav);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.figure-text .quote {
+  font-size: 1.5rem;
+  color: var(--light-bg-nav);
+  font-style: italic;
+  border-left: 4px solid var(--light-btn);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.5rem;
+  border-radius: 0 10px 10px 0;
+}
+
+
+
+.figure-image {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 0.5s ease-out;
+  padding: 1rem;
+}
+
+.figure-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.figure-image img:hover {
+  transform: scale(1.02);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--light-bg-nav);
+  border-radius: 50%;
+  padding: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .figure-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .figure-text p {
+    font-size: 1.1rem;
+  }
+
+  .figure-text .quote {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #figuresCarousel {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .figure-content {
+    padding: 1rem 0;
+  }
+
+  .figure-text {
+    padding: 1.5rem;
+  }
+
+  .figure-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .figure-text p {
+    font-size: 1rem;
+  }
+
+  .figure-image {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .figure-content {
+    flex-direction: column-reverse;
+  }
+
+  .figure-text {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .figure-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .figure-image {
+    height: 40vh;
+    margin: 1rem 0;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .figure-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .figure-text p {
+    font-size: 0.9rem;
+  }
+
+  .figure-text .quote {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .figure-image {
+    height: 35vh;
+  }
+}
+
+body.dark-mode #figuresCarousel {
+  background-color: var(--dark-bg-main);
+}
+
+body.dark-mode .figure-text h2,
+body.dark-mode .figure-text p {
+  color: var(--dark-text-nav);
+}
+
+body.dark-mode .figure-text .quote {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .carousel-control-prev-icon,
+body.dark-mode .carousel-control-next-icon {
+  background-color: var(--dark-btn);
+}
+
+@media (hover: none) {
+  .figure-image img:hover {
+    transform: none;
+  }
+}
+
+/* Thêm styles cho carousel */
+.carousel {
+  overflow: hidden;
+}
+
+/* Hiệu ứng fade cho các slide */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-duration: .8s;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  opacity: 0;
+}
+
+/* Làm mượt chuyển động nút điều hướng */
+.carousel-control-prev,
+.carousel-control-next {
+  transition: all 0.3s ease;
+  opacity: 0.5;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Hiệu ứng hover cho các slide */
+.figure-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.figure-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Animation cho nội dung trong slide */
+.figure-card .card-title,
+.figure-card .card-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.carousel-item.active .figure-card .card-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.carousel-item.active .figure-card .card-text {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+/* Thêm hiệu ứng parallax cho hình ảnh */
+.figure-card img {
+  transition: transform 0.5s ease;
+}
+
+.figure-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Tối ưu hiệu suất */
+.carousel-item {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Animation cho phần mở đầu */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Áp dụng animation cho carousel */
+.carousel-item {
+  opacity: 0;
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-item .figure-card {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.carousel-item.active .figure-card .card-title {
+  animation: slideInFromLeft 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.carousel-item.active .figure-card .card-text {
+  animation: slideInFromRight 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.carousel-item.active .figure-card img {
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+/* Hiệu ứng parallax và hover */
+.figure-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.figure-card:hover {
+  transform: translateY(-10px);
+}
+
+.figure-card img {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.figure-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Điều khiển carousel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+/* Tối ưu hiệu suất */
+.carousel-item {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Hiệu ứng loading */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.figure-card.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

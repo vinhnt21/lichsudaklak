@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Famous Battles - Vietnam War History</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/dark-mode.css" />
+    <link rel="stylesheet" href="./assets/css/battles.css" />
+    <style>
+      .title-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("./assets/images/battles/background.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 80px 0;
+      }
+
+      .title-section h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .battle-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        height: 100%;
+      }
+
+      .battle-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card-image {
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .battle-card:hover .card-image img {
+        transform: scale(1.1);
+      }
+
+      .card-content {
+        padding: 20px;
+        background: var(--bg-color);
+      }
+
+      .battle-time {
+        display: inline-block;
+        padding: 5px 15px;
+        background: #dc3545;
+        color: white;
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+
+      .card-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--text-color);
+      }
+
+      .card-content p {
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .btn-secondary {
+        background: #6c757d;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background: #5a6268;
+        transform: scale(1.05);
+      }
+
+      .modal-content {
+        border-radius: 15px;
+      }
+
+      .modal-header {
+        background: var(--bg-color);
+        color: var(--text-color);
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      .modal-body {
+        background: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      .banner {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .video-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(142, 68, 68, 0.7));
+      }
+
+      .banner-content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        padding-top: 200px;
+      }
+
+      .banner-content h1 {
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .banner-content p {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body class="light-mode">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./assets/images/index/logo.png" alt="Logo" width="100" />
+        </a>
+
+        <button
+          class="navbar-toggler btn-nav"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-history.html"
+                >Lịch sử hình thành và phát triển</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-places.html"
+                >Địa danh lịch sử</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-battles.html"
+                >Các trận đánh tiêu biểu</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-figures.html"
+                >Nhân vật lịch sử</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quiz.html">Câu hỏi Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feedback.html">Phản hồi</a>
+            </li>
+          </ul>
+          <button id="darkModeToggle" class="btn-nav">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="banner">
+      <div class="video-background">
+        <img
+          src="./assets/images/battles/tran-doi-thit-bam.jpg"
+          alt=""
+          srcset=""
+        />
+
+        <div class="overlay"></div>
+      </div>
+      <div class="container">
+        <div class="banner-content text-center">
+          <h1 class="display-4">Các Trận Đánh Tiêu Biểu</h1>
+          <p class="lead">Những chiến thắng lịch sử của quân dân Đắk Lắk</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="battles-section py-5">
+      <div class="container-fluid px-4">
+        <div class="row mb-4">
+          <div class="col-md-4 mb-4">
+            <div class="battle-card">
+              <div class="card-image">
+                <img
+                  src="./assets/images/battles/BMT.jpg"
+                  alt="Chiến dịch Việt Bắc"
+                />
+              </div>
+              <div class="card-content">
+                <div class="battle-time">1975</div>
+                <h3>Trận đánh Buôn Ma Thuột</h3>
+                <p>
+                  Ngày 10-3-1975, trận đánh vào Buôn Ma Thuột mở màn cho chiến
+                  dịch Tây Nguyên, tạo bước ngoặt quan trọng, làm thay đổi cục
+                  diện chiến trường, để Bộ Chính trị và Quân ủy Trung ương quyết
+                  định mở chiến dịch Hồ Chí Minh, giải phóng miền Nam, thống
+                  nhất đất nước mùa xuân 1975.
+                </p>
+                <button
+                  class="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#vietBacModal"
+                >
+                  Tìm hiểu thêm
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="battle-card">
+              <div class="card-image">
+                <img
+                  src="./assets/images/battles/dak-to-tan-canh.jpg"
+                  alt="Chiến dịch Biên Giới"
+                />
+              </div>
+              <div class="card-content">
+                <div class="battle-time">1972</div>
+                <h3>Chiến dịch Đắk Tô - Tân Cảnh</h3>
+                <p>
+                  Chiến thắng Đăk Tô - Tân Cảnh đã làm rung chuyển toàn bộ hệ
+                  thống phòng thủ của Mỹ - Ngụy ở Tây Nguyên, mở rộng vùng giải
+                  phóng và cùng với chiến thắng Quảng Trị, miền Đông Nam Bộ tạo
+                  ra một cục diện mới trên chiến trường miền Nam, góp phần đánh
+                  bại chiến lược "Việt Nam hóa chiến tranh", "Học thuyết Nich
+                  Xơn" ở Đông Dương, buộc Mỹ phải ký Hiệp định Pari rút quân
+                  khỏi Việt Nam.
+                </p>
+                <button
+                  class="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#bienGioiModal"
+                >
+                  Tìm hiểu thêm
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="battle-card">
+              <div class="card-image">
+                <img
+                  src="./assets/images/battles/Tay-nguyen.jpg"
+                  alt="Chiến dịch Điện Biên Phủ"
+                />
+              </div>
+              <div class="card-content">
+                <div class="battle-time">1875</div>
+                <h3>Chiến dịch Tây Nguyên</h3>
+                <p>
+                  48 năm trước, ngày 23/3/1975, Gia Nghĩa được giải phóng. Một
+                  ngày sau, ngày 24/3/1975, ta cơ bản giải phóng và làm chủ hoàn
+                  toàn Tây Nguyên, tạo đột biến chiến lược, hệ thống ngụy quyền
+                  sụp đổ trên diện rộng, tạo đà cho Chiến dịch Hồ Chí Minh toàn
+                  thắng ngày 30/4/1975.
+                </p>
+                <button
+                  class="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#dienBienPhuModal"
+                >
+                  Tìm hiểu thêm
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="battle-card">
+              <div class="card-image">
+                <img
+                  src="./assets/images/battles/mau-than.jpg"
+                  alt="Chiến dịch Mậu Thân"
+                />
+              </div>
+              <div class="card-content">
+                <div class="battle-time">1968</div>
+                <h3>Chiến dịch Mậu Thân (30/1 - 28/3/1968)</h3>
+                <p>
+                  Chiến dịch Tết Mậu Thân (1968) là một cuộc tổng tiến công và
+                  nổi dậy lớn của Mặt trận Dân tộc Giải phóng miền Nam Việt Nam
+                  trong dịp Tết Nguyên Đán. Chiến dịch này đã tấn công vào các
+                  vị trí quân sự quan trọng của Mỹ và chính quyền Việt Nam Cộng
+                  hòa, đóng vai trò quan trọng trong cuộc kháng chiến.
+                </p>
+                <button
+                  class="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#mauThanModal"
+                >
+                  Tìm hiểu thêm
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="battle-card">
+              <div class="card-image">
+                <img
+                  src="./assets/images/battles/tran-doi-thit-bam.jpg"
+                  alt="Trận Đồi Thịt Băm"
+                />
+              </div>
+              <div class="card-content">
+                <div class="battle-time">1969</div>
+                <h3>Trận Đồi Thịt Băm (10/5 - 20/5/1969)</h3>
+                <p>
+                  Trận Đồi A Bia (10-20/5/1969) tại Thừa Thiên-Huế chứng kiến
+                  quân đội Mỹ với 2.000 binh sĩ cùng pháo binh và không quân tấn
+                  công một ngọn đồi do lực lượng Mặt trận Dân tộc Giải phóng
+                  miền Nam Việt Nam chiếm giữ. Dù chiếm được đồi sau 10 ngày
+                  giao tranh ác liệt, quân Mỹ đã rút lui một tháng sau đó, để
+                  lại nhiều tổn thất.
+                </p>
+                <button
+                  class="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#tranDoiThitBamModal"
+                >
+                  Tìm hiểu thêm
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="battle-card">
+              <div class="card-image">
+                <img
+                  src="./assets/images/battles/ho-chi-minh.jpg"
+                  alt="Chiến dịch Hồ Chí Minh"
+                />
+              </div>
+              <div class="card-content">
+                <div class="battle-time">1975</div>
+                <h3>Chiến dịch Hồ Chí Minh (30/4/1975)</h3>
+                <p>
+                  Chiến dịch Hồ Chí Minh lịch sử trong cuộc Tổng tiến công mùa
+                  Xuân năm 1975 đã đánh dấu sự kết thúc của cuộc kháng chiến
+                  chống Mỹ và giải phóng hoàn toàn miền Nam, thống nhất đất
+                  nước. Chiến dịch này thực hiện chỉ thị của Chủ tịch Hồ Chí
+                  Minh: "Đánh cho Mỹ cút, đánh cho ngụy nhào."
+                </p>
+                <button
+                  class="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#hoChiMinhModal"
+                >
+                  Tìm hiểu thêm
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="modal fade" id="vietBacModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Trận Buôn Ma Thuột (1975)</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/jA7RiI7NiBo"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="vietBacModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Chiến dịch Việt Bắc Thu Đông(1947)</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/TLEsK_3PiCM"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="bienGioiModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Chiến dịch Đắk Tô - Tân Cảnh(1972)</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/TLEsK_3PiCM"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="dienBienPhuModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Chiến dịch Tây Nguyên (1975)</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/ACajoUoc10s"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="mauThanModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Chiến dịch tết Mậu Thân (30/1 - 28/3/1968)
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/1J9J9e1Q2Zk"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="tranDoiThitBamModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Trận Đồi Thịt Băm (10/5 - 20/5/1969)</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/wP1KMZ02DRc"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="hoChiMinhModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Chiến dịch Hồ Chí Minh (30/4/1975)</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/TLXfUESIWQc"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="./assets/images/index/logo.png" alt="Logo" width="200" />
+          </div>
+          <div class="col-md-4">
+            <h5>Liên kết nhanh</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="dak-lak-history.html"
+                  >Lịch sử hình thành và phát triển</a
+                >
+              </li>
+              <li><a href="dak-lak-places.html">Địa danh lịch sử</a></li>
+              <li>
+                <a href="dak-lak-battles.html">Các trận đánh tiêu biểu</a>
+              </li>
+              <li><a href="dak-lak-figures.html">Nhân vật lịch sử</a></li>
+              <li><a href="quiz.html">Câu hỏi trắc nghiệm</a></li>
+              <li><a href="feedback.html">Phản hồi</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Liên hệ</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-phone"></i> +84 9****************</li>
+              <li>
+                <i class="fas fa-envelope"></i> c**************142@example.com
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Buôn Ma Thuột, Việt Nam
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/dark-mode.js"></script>
+  </body>
+</html>

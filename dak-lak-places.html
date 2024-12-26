@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Địa chỉ lịch sử tại Đắk Lắk</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/dark-mode.css" />
+    <link rel="stylesheet" href="./assets/css/american-war.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      .banner {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(142, 68, 68, 0.7)),
+          url("./assets/images/american-war/cada.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 150px 0;
+        color: white;
+      }
+
+      .event-section {
+        position: relative;
+        transition: all 0.3s ease;
+        padding: 60px 0;
+      }
+
+      .event-section:nth-child(even) {
+        background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+      }
+
+      .event-section img {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .event-section img:hover {
+        transform: scale(1.05);
+      }
+
+      .event-section h2 {
+        color: #2c3e50;
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .event-section h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(to right, #c41e3a, #8b0000);
+      }
+
+      .event-section p {
+        line-height: 1.8;
+        color: #34495e;
+      }
+
+      .timeline-card {
+        background: linear-gradient(145deg, #ffffff, #f0f0f0);
+        border-left: 4px solid #c41e3a;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .timeline-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border-left: 4px solid #8b0000;
+      }
+
+      .timeline-card h4 {
+        color: #2c3e50;
+        font-weight: bold;
+      }
+
+      .timeline-card .time {
+        color: #c41e3a;
+        font-weight: 600;
+      }
+
+      .btn-light {
+        background: linear-gradient(145deg, #ffffff, #f0f0f0);
+        border: none;
+        padding: 12px 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .btn-light:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(145deg, #f0f0f0, #ffffff);
+      }
+
+      .event-section img {
+        border: 5px solid #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .event-section img:hover {
+        transform: scale(1.05) rotate(1deg);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      }
+
+      .intro-text {
+        color: #34495e;
+        line-height: 1.8;
+        font-size: 1.1em;
+      }
+
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, #c41e3a, #8b0000);
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover:after {
+        width: 100%;
+      }
+
+      .dark-mode .timeline-card {
+        background: linear-gradient(145deg, #2c3e50, #34495e);
+        color: #fff;
+      }
+
+      .dark-mode .timeline-card h4 {
+        color: #fff;
+      }
+
+      .dark-mode .event-section:nth-child(even) {
+        background: linear-gradient(145deg, #2c3e50, #243342);
+      }
+
+      .dark-mode .event-section h2,
+      .dark-mode .intro-text {
+        color: #ecf0f1;
+      }
+    </style>
+  </head>
+  <body class="light-mode">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./assets/images/index/logo.png" alt="Logo" width="100" />
+        </a>
+
+        <button
+          class="navbar-toggler btn-nav"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-history.html"
+                >Lịch sử hình thành và phát triển</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-places.html"
+                >Địa danh lịch sử</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-battles.html"
+                >Các trận đánh tiêu biểu</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-figures.html"
+                >Nhân vật lịch sử</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quiz.html">Câu hỏi Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feedback.html">Phản hồi</a>
+            </li>
+          </ul>
+          <button id="darkModeToggle" class="btn-nav">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="banner">
+      <div class="container">
+        <div class="banner-content text-center">
+          <h1 class="display-4 fw-bold">Di tích lịch sử tại Đắk Lắk</h1>
+          <h2 class="h3 mb-4">Những địa điểm lịch sử quan trọng</h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro" class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8" data-aos="fade-right">
+            <h2>Di tích lịch sử tại Đắk Lắk</h2>
+            <h3>Những địa điểm lịch sử quan trọng</h3>
+            <p class="intro-text">
+              Di tích lịch sử tại Đắk Lắk là minh chứng cho những giai đoạn lịch
+              sử hào hùng của dân tộc. Mỗi địa điểm đều mang trong mình những
+              câu chuyện về tinh thần đấu tranh, sự hy sinh và lòng yêu nước của
+              người dân Tây Nguyên nói riêng và cả nước nói chung.
+            </p>
+          </div>
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="200">
+            <img
+              src="./assets/images/american-war/mau-than.jpg"
+              alt="Di tích lịch sử Đắk Lắk"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-card" onclick="scrollToEvent('mau-than')">
+              <h4>Tượng đài Mậu Thân</h4>
+              <p class="time">1968</p>
+              <p class="description">
+                Di tích lịch sử ghi dấu cuộc Tổng tiến công và nổi dậy Tết Mậu
+                Thân 1968
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="timeline-card" onclick="scrollToEvent('diem-cao-519')">
+              <h4>Điểm cao 519</h4>
+              <p class="time">1960-1975</p>
+              <p class="description">
+                Vị trí chiến lược quan trọng trong cuộc kháng chiến chống Mỹ
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="timeline-card" onclick="scrollToEvent('cada')">
+              <h4>Đồn điền CADA</h4>
+              <p class="time">1922</p>
+              <p class="description">
+                Một trong những đồn điền đầu tiên của thực dân Pháp tại Đắk Lắk
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="timeline-card" onclick="scrollToEvent('nha-day')">
+              <h4>Nhà Đày Buôn Ma Thuột</h4>
+              <p class="time">1930-1945</p>
+              <p class="description">Chứng tích của thời kỳ đấu tranh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diem-cao-519" class="event-section py-5">
+      <div class="container">
+        <h2>Di tích lịch sử điểm cao 519</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img
+              src="./assets/images/american-war/DC519.png"
+              alt="Điểm cao 519"
+              class="img-fluid rounded"
+            />
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <p>
+              Di tích lịch sử Điểm cao 519 nằm tại huyện M'Drắk, Đắk Lắk, ghi
+              dấu một trong những chiến công lừng lẫy trong cuộc kháng chiến
+              chống Mỹ. Vị trí chiến lược của điểm cao này đã chứng kiến những
+              trận đánh ác liệt giữa quân ta và địch, đặc biệt là Trung đoàn 25,
+              Quân khu V, đã kiên cường bảo vệ tuyến phòng thủ, góp phần quan
+              trọng vào chiến thắng Buôn Ma Thuột.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thap-cham" class="event-section py-5">
+      <div class="container">
+        <h2>Tháp Chàm Yang Prong</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p>
+              Tháp Chàm Yang Prong (hay còn gọi là Tháp Chàm Rừng Xanh) là một
+              di tích độc đáo nằm giữa khu rừng nguyên sinh Ea Súp, tỉnh Đắk
+              Lắk. Đây là tháp Chàm duy nhất ở Tây Nguyên, được xây dựng bằng
+              gạch nung đỏ không mạch vữa, đứng kiên cố trên nền đá xanh, giữa
+              không gian tĩnh lặng của thiên nhiên hoang sơ.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/thap-cham.jpg"
+              alt="Tháp Chàm Yang Prong"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="den-tho" class="event-section py-5">
+      <div class="container">
+        <h2>Di tích lịch sử đền thờ Đức Thánh Trần</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/den-tho.jpg"
+              alt="Đền thờ Đức Thánh Trần"
+              class="img-fluid rounded"
+            />
+          </div>
+          <div class="col-lg-6">
+            <p>
+              Đền thờ Đức Thánh Trần nằm tại thị xã Buôn H, Đắk Lắk, là một địa
+              điểm linh thiêng, thờ cúng Trần Hưng Đạo – vị anh hùng dân tộc nổi
+              tiếng trong ba lần đánh bại quân Nguyên – Mông. Được xây dựng từ
+              năm 1947, Đền thờ không chỉ là nơi tôn vinh công lao của Trần Hưng
+              Đạo mà còn lưu giữ nhiều giá trị văn hóa phi vật thể.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="don-dien-cada" class="event-section py-5">
+      <div class="container">
+        <h2>Di tích lịch sử đồn điền CADA</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p>
+              Đồn điền cà phê CADA được thành lập vào năm 1922, là một trong
+              những đồn điền sớm nhất trong cuộc khai thác thuộc địa lần thứ hai
+              của thực dân Pháp ở Đông Dương. Với diện tích ban đầu gần 2.000
+              hecta, CADA chuyên trồng cà phê và trà, đồng thời xây dựng nhiều
+              công trình phục vụ cho việc khai thác, chế biến.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/cada.jpg"
+              alt="Đồn điền CADA"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hang-da" class="event-section py-5">
+      <div class="container">
+        <h2>Hang đá Dak Tuar</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/hang-da.jpg"
+              alt="Hang đá Dak Tuar"
+              class="img-fluid rounded"
+            />
+          </div>
+          <div class="col-lg-6">
+            <p>
+              Hang đá Dak Tuar tọa lạc gần dòng thác cùng tên, cách trung tâm xã
+              Cư Pui, huyện Krông Bông khoảng 6km, là một điểm đến đầy bí ẩn và
+              hấp dẫn của Đắk Lắk. Nổi bật với hệ thống hang động nhiều tầng,
+              nơi đây từng là căn cứ quan trọng của Tỉnh ủy Đắk Lắk và các đơn
+              vị bộ đội trong những năm kháng chiến chống Mỹ.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tru-so" class="event-section py-5">
+      <div class="container">
+        <h2>Trụ sở Ủy ban khởi nghĩa tỉnh Đắk Lắk 1945</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p>
+              Trụ sở Ủy ban khởi nghĩa tỉnh Đắk Lắk 1945, tọa lạc tại số 71 Lý
+              Thường Kiệt, phường Thắng Lợi, thành phố Buôn Ma Thuột, là một địa
+              chỉ lịch sử quan trọng ghi dấu sự kiện cách mạng oai hùng. Nguyên
+              là nhà của ông Đầu Viết Chúc, cơ sở cách mạng của Việt Minh.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/tru-so.jpg"
+              alt="Trụ sở Ủy ban khởi nghĩa"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="toa-giam-muc" class="event-section py-5">
+      <div class="container">
+        <h2>Tòa Giám mục Ban Mê Thuột</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/toa-giam-muc.jpg"
+              alt="Tòa Giám mục Ban Mê Thuột"
+              class="img-fluid rounded"
+            />
+          </div>
+          <div class="col-lg-6">
+            <p>
+              Tòa Giám mục Ban Mê Thuột tọa lạc tại số 104 đường Phan Châu
+              Trinh, là một công trình kiến trúc cổ kính và quy mô lớn, nổi bật
+              với sự kết hợp giữa văn hóa Tây Nguyên và ảnh hưởng của kiến trúc
+              phương Tây. Được xây dựng vào năm 1956 bởi các Nữ tu Dòng Biển
+              Đức.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chua-khai-doan" class="event-section py-5">
+      <div class="container">
+        <h2>Chùa Sắc tứ Khải Đoan</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p>
+              Chùa Sắc Tứ Khải Đoan tọa lạc tại số 117 đường Phan Bội Châu,
+              thành phố Buôn Ma Thuột, không chỉ là một điểm đến tâm linh nổi
+              tiếng mà còn là biểu tượng văn hóa lịch sử độc đáo của Đắk Lắk.
+              Được xây dựng từ năm 1953 dưới sự quản lý của Đoan Huy Hoàng Thái
+              Hậu.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/chua-khai-doan.jpg"
+              alt="Chùa Sắc tứ Khải Đoan"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="biet-dien" class="event-section py-5">
+      <div class="container">
+        <h2>Biệt Điện Bảo Đại</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/biet-dien.jpg"
+              alt="Biệt Điện Bảo Đại"
+              class="img-fluid rounded"
+            />
+          </div>
+          <div class="col-lg-6">
+            <p>
+              Biệt điện Bảo Đại tọa lạc ngay trung tâm thành phố Buôn Ma Thuột,
+              là một công trình kiến trúc độc đáo, mang đậm dấu ấn lịch sử và
+              văn hóa của Đắk Lắk. Ban đầu, biệt điện được xây dựng với kiến
+              trúc địa phương, sau đó được cải tạo lại theo phong cách kiến trúc
+              Pháp.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dinh-lac-giao" class="event-section py-5">
+      <div class="container">
+        <h2>Đình Lạc Giao</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p>
+              Đình Lạc Giao tọa lạc tại số 67 Phan Bội Châu, thành phố Buôn Ma
+              Thuột, là một công trình mang đậm giá trị lịch sử và văn hóa của
+              địa phương. Được xây dựng từ năm 1928 bởi nhân dân làng Lạc Giao,
+              đình là nơi sinh hoạt văn hóa tín ngưỡng và thờ Thần Hoàng làng.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/dinh-lac-giao.jpg"
+              alt="Đình Lạc Giao"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nha-day" class="event-section py-5">
+      <div class="container">
+        <h2>Nhà Đày Buôn Ma Thuột</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/american-war/nha-day.jpg"
+              alt="Nhà Đày Buôn Ma Thuột"
+              class="img-fluid rounded"
+            />
+          </div>
+          <div class="col-lg-6">
+            <p>
+              Nhà đày Buôn Ma Thuột là một trong những di tích lịch sử quan
+              trọng của Việt Nam, gắn liền với quá trình kháng chiến chống thực
+              dân Pháp. Nằm tại số 18 đường Tán Thuật, thành phố Buôn Ma Thuột,
+              nhà đày là minh chứng sống động cho tội ác của thực dân Pháp và sự
+              kiên cường, bất khuất của các chiến sĩ cách mạng.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="./assets/images/index/logo.png" alt="Logo" width="200" />
+          </div>
+          <div class="col-md-4">
+            <h5>Liên kết nhanh</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="dak-lak-history.html"
+                  >Lịch sử hình thành và phát triển</a
+                >
+              </li>
+              <li><a href="dak-lak-places.html">Địa danh lịch sử</a></li>
+              <li>
+                <a href="dak-lak-battles.html">Các trận đánh tiêu biểu</a>
+              </li>
+              <li><a href="dak-lak-figures.html">Nhân vật lịch sử</a></li>
+              <li><a href="quiz.html">Câu hỏi trắc nghiệm</a></li>
+              <li><a href="feedback.html">Phản hồi</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Liên hệ</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-phone"></i> +84 9****************</li>
+              <li>
+                <i class="fas fa-envelope"></i> c**************142@example.com
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Buôn Ma Thuột, Việt Nam
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets-of-daklak-website/js/index.js"></script>
+    <script src="./assets-of-daklak-website/js/american-war.js"></script>
+    <script src="./assets/js/dark-mode.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 150,
+        easing: "ease-in-out",
+      });
+    </script>
+  </body>
+</html>

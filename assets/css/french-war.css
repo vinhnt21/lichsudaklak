@@ -1,0 +1,158 @@
+.banner {
+  height: calc(100vh - 76px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/french-war/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--light-text-nav);
+}
+.second_banner {
+  height: calc(100vh - 76px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/french-war/BMT.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--light-text-nav);
+}
+.banner h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.banner h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-card {
+  background-color: var(--light-btn);
+  color: var(--light-bg-nav);
+  padding: 2rem;
+  border-radius: 10px;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-card .time {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.event-section {
+  background-color: var(--light-bg-main);
+}
+
+.event-section:nth-child(even) {
+  background-color: rgba(163, 165, 103, 0.1);
+}
+
+.quote {
+  border-left: 4px solid var(--light-btn);
+  padding-left: 1rem;
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+.quote footer {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+body.dark-mode .timeline-card {
+  background-color: var(--dark-btn);
+  color: var(--dark-text-nav);
+}
+
+body.dark-mode .event-section:nth-child(even) {
+  background-color: rgba(78, 78, 78, 0.1);
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background: #333;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
+  position: relative;
+  opacity: 0; /* Ban đầu ẩn các item */
+  transform: translateY(50px); /* Dịch xuống 50px */
+  transition: all 0.8s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1; /* Hiện khi scroll đến */
+  transform: translateY(0);
+}
+
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 20px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Item bên trái */
+.timeline-item:nth-child(odd) .timeline-content {
+  left: 0;
+}
+
+/* Item bên phải */
+.timeline-item:nth-child(even) .timeline-content {
+  left: 55%;
+}
+
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+}
+
+/* Animation cho dot */
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,123,255,0.3);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}

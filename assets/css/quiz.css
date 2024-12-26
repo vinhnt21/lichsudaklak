@@ -1,0 +1,325 @@
+/* assets/css/quiz.css */
+.quiz-container {
+  min-height: calc(100vh - 76px - 300px); /* Adjust based on navbar and footer height */
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-category {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-question {
+  background-color: var(--light-bg-main);
+  border: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Styles cho option buttons */
+.option-btn {
+  background-color: var(--light-bg-main);
+  border: 2px solid var(--light-btn);
+  color: var(--light-bg-nav);
+  padding: 1rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.option-btn:hover:not([disabled]) {
+  background-color: var(--light-btn);
+  color: var(--light-text-nav);
+  transform: translateX(10px);
+}
+
+/* Styles cho đáp án đúng/sai */
+.option-btn.correct {
+  background-color: #28a745 !important;
+  border-color: #28a745 !important;
+  color: white !important;
+}
+
+.option-btn.incorrect {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: white !important;
+}
+
+/* Dark mode styles */
+body.dark-mode .option-btn {
+  background-color: var(--dark-bg-nav);
+  border-color: var(--dark-btn);
+  color: var(--dark-text-nav);
+}
+
+body.dark-mode .option-btn:hover:not([disabled]) {
+  background-color: var(--dark-btn);
+}
+
+/* Đảm bảo màu đáp án đúng/sai vẫn hiển thị trong dark mode */
+body.dark-mode .option-btn.correct {
+  background-color: #28a745 !important;
+  border-color: #28a745 !important;
+  color: white !important;
+}
+
+body.dark-mode .option-btn.incorrect {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: white !important;
+}
+
+/* Styles cho button bị disable */
+.option-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Hiệu ứng hover cho các button không bị disable */
+.option-btn:not(:disabled):hover {
+  transform: translateX(10px);
+}
+
+/* Animation cho đáp án đúng/sai */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.option-btn.correct,
+.option-btn.incorrect {
+  animation: fadeIn 0.3s ease-in-out;
+}
+.progress {
+  height: 10px;
+  background-color: var(--light-bg-main);
+}
+
+.progress-bar {
+  background-color: #8b0000;
+  transition: width 0.3s ease;
+}
+
+.score-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--light-bg-nav);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .quiz-question {
+  background-color: var(--dark-bg-nav);
+  color: var(--dark-text-nav);
+}
+
+body.dark-mode .option-btn {
+  background-color: var(--dark-bg-nav);
+  color: var(--dark-text-nav);
+  border-color: var(--dark-btn);
+}
+
+body.dark-mode .option-btn:hover {
+  background-color: var(--dark-btn);
+}
+
+body.dark-mode .score-text {
+  color: var(--dark-text-nav);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .quiz-category {
+      margin-bottom: 1rem;
+  }
+
+  .option-btn {
+      padding: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .quiz-controls {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .quiz-controls button {
+      width: 100%;
+  }
+}
+.results-stats {
+  background-color: var(--light-bg-main);
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.results-header h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--light-bg-nav);
+  margin-bottom: 10px;
+}
+
+.score-text {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-label {
+  font-weight: 500;
+}
+
+.score-value {
+  font-weight: 700;
+  padding: 8px 15px;
+  border-radius: 20px;
+  min-width: 80px;
+  text-align: center;
+}
+
+#correctAnswers {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+#wrongAnswers {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+#percentage {
+  background-color: rgba(0, 123, 255, 0.2);
+  color: #007bff;
+}
+
+#timeSpent {
+  background-color: rgba(108, 117, 125, 0.2);
+  color: #6c757d;
+}
+
+.results-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.results-actions button {
+  padding: 12px 25px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.results-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Dark mode adjustments */
+body.dark-mode .results-stats {
+  background-color: var(--dark-bg-nav);
+}
+
+body.dark-mode .results-header h3 {
+  color: var(--dark-text-nav);
+}
+
+body.dark-mode .score-text {
+  background: rgba(255,255,255,0.05);
+  color: var(--dark-text-nav);
+}
+
+body.dark-mode .results-header {
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.btn-primary {
+  background-color: #8b0000; /* Màu đỏ đậm */
+  border-color: #8b0000;
+}
+
+.btn-primary:hover {
+  background-color: #660000;
+  border-color: #660000;
+}
+
+.btn-secondary {
+  background-color: #4a4a4a;
+  border-color: #4a4a4a;
+}
+
+.btn-secondary:hover {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+.quiz-question .card {
+  border-left: 5px solid #8b0000;
+}
+
+.option.selected {
+  background-color: #8b0000;
+  color: white;
+}
+
+.option:hover {
+  background-color: #f8d7da;
+  border-color: #8b0000;
+}
+
+.results-header h3 {
+  color: #8b0000;
+}
+
+.score-value {
+  color: #8b0000;
+}
+
+/* Dark mode adjustments */
+.dark-mode .quiz-container {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+.dark-mode .quiz-category {
+  background-color: #3d3d3d;
+}
+
+.dark-mode .card {
+  background-color: #3d3d3d;
+  color: #ffffff;
+}

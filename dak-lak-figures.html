@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anh Hùng Lịch Sử Đắk Lắk</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/dark-mode.css" />
+    <link rel="stylesheet" href="./assets/css/french-war.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      .hero-figure {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(142, 68, 68, 0.7)),
+          url("./assets/images/figures/hero-banner.jpeg");
+        background-size: cover;
+        background-position: center;
+        padding: 150px 0;
+        color: white;
+      }
+
+      .figure-card {
+        background: linear-gradient(145deg, #ffffff, #f0f0f0);
+        border-left: 4px solid #c41e3a;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+      }
+
+      .figure-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .figure-image {
+        border-radius: 50%;
+        border: 5px solid #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .figure-image:hover {
+        transform: scale(1.05);
+      }
+
+      .quote-section {
+        padding: 60px 0;
+        margin: 40px 0;
+      }
+
+      .figure-quote {
+        font-style: italic;
+        border-left: 4px solid #c41e3a;
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body class="light-mode">
+    <!-- Navigation section same as template -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./assets/images/index/logo.png" alt="Logo" width="100" />
+        </a>
+
+        <button
+          class="navbar-toggler btn-nav"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-history.html"
+                >Lịch sử hình thành và phát triển</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-places.html"
+                >Địa danh lịch sử</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-battles.html"
+                >Các trận đánh tiêu biểu</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dak-lak-figures.html"
+                >Nhân vật lịch sử</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quiz.html">Câu hỏi Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feedback.html">Phản hồi</a>
+            </li>
+          </ul>
+          <button id="darkModeToggle" class="btn-nav">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <section class="hero-figure">
+      <div class="container">
+        <div class="text-center">
+          <h1 class="display-4 fw-bold">Anh Hùng Lịch Sử Đắk Lắk</h1>
+          <h2 class="h3 mb-4">Tinh Thần Bất Diệt Của Tây Nguyên</h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-6 d-flex align-items-center justify-content-center"
+            data-aos="fade-right"
+          >
+            <p class="d-flex align-items-center justify-content-center fs-4">
+              Đắk Lắk, vùng đất trù phú nằm giữa đại ngàn Tây Nguyên, không chỉ
+              nổi tiếng với thiên nhiên hùng vĩ mà còn là nơi ghi dấu những
+              trang sử hào hùng. Từ xa xưa đến nay, Đắk Lắk đã sản sinh ra nhiều
+              nhân vật kiệt xuất, những người mang trong mình lòng dũng cảm,
+              tinh thần bất khuất và khát vọng tự do.
+              <br />
+              Trang này xin giới thiệu một số nhân vật tiêu biểu đã góp phần làm
+              nên hào khí của vùng đất này, đồng thời tôn vinh các thế hệ anh
+              hùng khác vẫn còn chưa được nhắc đến.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img
+              src="./assets/images/figures/hero-banner.jpeg"
+              alt="Đắk Lắk Heroes"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repeat this section for each historical figure -->
+    <section id="ama-thuot" class="event-section py-5">
+      <div class="container">
+        <div class="figure-card">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h3>Ama Thuột</h3>
+              <p class="figure-text">
+                Ama Thuột, một tù trưởng đầy uy quyền, là người đã khai sinh
+                vùng đất mang tên Buôn Ma Thuột ngày nay. Với tài lãnh đạo và
+                tầm nhìn chiến lược, ông đã góp phần xây dựng cộng đồng vững
+                mạnh.
+              </p>
+              <div class="figure-quote">
+                "Buôn Ma Thuột: Nơi khởi nguồn sức mạnh Tây Nguyên."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="huynh-thi-huong" class="event-section py-5">
+      <div class="container">
+        <div class="figure-card">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h3>Huỳnh Thị Hường</h3>
+              <p class="figure-text">
+                Là một trong những người phụ nữ kiên cường nhất trong lịch sử
+                Đắk Lắk, Huỳnh Thị Hường là Anh hùng Lực lượng vũ trang Nhân
+                dân. Trong cuộc kháng chiến chống Mỹ, bà là biểu tượng của lòng
+                yêu nước.
+              </p>
+              <div class="figure-quote">
+                "Lòng dũng cảm là ánh sáng dẫn lối tự do."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="y-bih-aleo" class="event-section py-5">
+      <div class="container">
+        <div class="figure-card">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h3>Y Bih Aleo</h3>
+              <p class="figure-text">
+                Y Bih Aleo là người dân tộc Ê Đê đầu tiên giữ chức vụ cao trong
+                chính quyền – Phó Chủ tịch Quốc hội. Ông là cầu nối quan trọng
+                giữa các dân tộc Tây Nguyên và chính quyền trung ương.
+              </p>
+              <div class="figure-quote">
+                "Hòa bình và phát triển là chìa khóa cho tương lai Tây Nguyên."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="y-ngong-nie-kdam" class="event-section py-5">
+      <div class="container">
+        <div class="figure-card">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h3>Y Ngông Niê Kdăm</h3>
+              <p class="figure-text">
+                Là giáo sư và bác sĩ xuất sắc, Y Ngông Niê Kdăm đã đóng vai trò
+                tiên phong trong lĩnh vực y tế và giáo dục tại Tây Nguyên. Ông
+                góp phần thay đổi cuộc sống của đồng bào dân tộc nơi đây.
+              </p>
+              <div class="figure-quote">
+                "Kiến thức là sức mạnh mang lại thay đổi thực sự."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="no-trang-long" class="event-section py-5">
+      <div class="container">
+        <div class="figure-card">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h3>Nơ Trang Lơng</h3>
+              <p class="figure-text">
+                Nơ Trang Lơng là lãnh tụ phong trào khởi nghĩa chống Pháp đầu
+                thế kỷ 20. Ông là biểu tượng của tinh thần đấu tranh bất khuất
+                và lòng tự hào dân tộc của đồng bào Tây Nguyên.
+              </p>
+              <div class="figure-quote">
+                "Không gì mạnh hơn ý chí tự do của dân tộc."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .dark-mode .figure-card {
+        background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+        color: white;
+      }
+    </style>
+    <!-- Repeat for other figures -->
+
+    <section class="quote-section">
+      <div class="container text-center">
+        <h3>Lời Tôn Vinh Các Anh Hùng Khác</h3>
+        <p>
+          Những nhân vật được nhắc đến ở đây chỉ là một phần nhỏ trong bức tranh
+          lịch sử rộng lớn của Đắk Lắk...
+        </p>
+      </div>
+    </section>
+
+    <!-- Call to Action section -->
+    <section class="py-5">
+      <div class="container text-center">
+        <h3>Chia Sẻ Câu Chuyện Của Bạn</h3>
+        <p>
+          Hãy cùng nhau giữ gìn và lan tỏa những giá trị lịch sử quý báu này...
+        </p>
+        <a href="feedback.html" class="btn btn-primary">Gửi Câu Chuyện</a>
+      </div>
+    </section>
+
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="./assets/images/index/logo.png" alt="Logo" width="200" />
+          </div>
+          <div class="col-md-4">
+            <h5>Liên kết nhanh</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="dak-lak-history.html"
+                  >Lịch sử hình thành và phát triển</a
+                >
+              </li>
+              <li><a href="dak-lak-places.html">Địa danh lịch sử</a></li>
+              <li>
+                <a href="dak-lak-battles.html">Các trận đánh tiêu biểu</a>
+              </li>
+              <li><a href="dak-lak-figures.html">Nhân vật lịch sử</a></li>
+              <li><a href="quiz.html">Câu hỏi trắc nghiệm</a></li>
+              <li><a href="feedback.html">Phản hồi</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Liên hệ</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-phone"></i> +84 9****************</li>
+              <li>
+                <i class="fas fa-envelope"></i> c**************142@example.com
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Buôn Ma Thuột, Việt Nam
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/french-war.js"></script>
+    <script src="./assets/js/dark-mode.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 150,
+        easing: "ease-in-out",
+      });
+    </script>
+  </body>
+</html>
