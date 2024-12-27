@@ -52,7 +52,11 @@
   padding: 1rem 1.5rem;
   border-radius: 0 10px 10px 0;
 }
-
+.figure-text {
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-in;
+  font-family: Arial, sans-serif;
+}
 
 
 .figure-image {

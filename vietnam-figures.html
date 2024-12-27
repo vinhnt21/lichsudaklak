@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Các Nhân Vật Lịch Sử Quan Trọng - Lịch sử Chiến tranh Việt Nam
+      Các Nhân Vật Lịch Sử Nổi Tiếng - Lịch sử Chiến tranh Việt Nam
     </title>
 
     <link
@@ -19,6 +19,28 @@
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/dark-mode.css" />
     <link rel="stylesheet" href="./assets/css/figures.css" />
+    <style>
+      /* Thêm hiệu ứng underline cho navbar links */
+      .navbar .nav-link {
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      .navbar .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #D35400; /* Màu xanh lá Material Design */
+        transition: width 0.3s ease-in-out;
+      }
+
+      .navbar .nav-link:hover::after {
+        width: 100%;
+      }
+    </style>
   </head>
   <body class="light-mode">
     <nav class="navbar navbar-expand-lg">
@@ -257,17 +279,15 @@
             <h5>Liên kết nhanh</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="vietnam-french-war.html">Kháng chiến chống Pháp</a>
+                <a href="dak-lak-history.html">TRANG CHỦ</a>
               </li>
+              <li><a href="dak-lak-places.html">LỊCH SỬ ĐẮK LẮK</a></li>
               <li>
-                <a href="vietnam-american-war.html">Kháng chiến chống Mỹ</a>
+                <a href="dak-lak-battles.html">LỊCH SỬ VIỆT NAM
+                </a>
               </li>
-              <li>
-                <a href="vietnam-battles.html">Các trận đánh nổi tiếng</a>
-              </li>
-              <li><a href="vietnam-figures.html">Nhân vật lịch sử</a></li>
-              <li><a href="quiz.html">Câu hỏi Trắc Nghiệm</a></li>
-              <li><a href="feedback.html">Phản hồi</a></li>
+              <li><a href="quiz.html">CÂU HỎI TRẮC NGHIỆM</a></li>
+              <li><a href="feedback.html">PHẢN HỒI</a></li>
             </ul>
           </div>
           <div class="col-md-4">

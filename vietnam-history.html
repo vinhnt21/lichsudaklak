@@ -18,6 +18,28 @@
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/dark-mode.css" />
     <link rel="stylesheet" href="./assets/css/welcome-modal.css" />
+    <style>
+      /* Thêm hiệu ứng underline cho navbar links */
+      .navbar .nav-link {
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      .navbar .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, #FFFFFF, #E0E0E0, #BEBEBE, #1A1A1A);
+        transition: width 0.3s ease-in-out;
+      }
+
+      .navbar .nav-link:hover::after {
+        width: 100%;
+      }
+    </style>
   </head>
   <body class="light-mode">
     <nav class="navbar navbar-expand-lg">
@@ -185,7 +207,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title">Kháng chiến chống Pháp</h5>
-                <a href="french-war.html" class="btn btn-secondary"
+                <a href="vietnam-french-war.html" class="btn btn-secondary"
                   >Chi tiết thêm</a
                 >
               </div>
@@ -201,7 +223,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title">Kháng chiến chống Mỹ</h5>
-                <a href="american-war.html" class="btn btn-secondary"
+                <a href="vietnam-american-war.html" class="btn btn-secondary"
                   >Chi tiết thêm</a
                 >
               </div>
@@ -217,7 +239,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title">Những trận đánh nổi tiếng</h5>
-                <a href="battles.html" class="btn btn-secondary"
+                <a href="vietnam-battles.html" class="btn btn-secondary"
                   >Chi tiết thêm</a
                 >
               </div>
@@ -232,8 +254,8 @@
                 alt="Các nhân vật lịch sử quan trọng"
               />
               <div class="card-body">
-                <h5 class="card-title">Các nhân vật lịch sử quan trọng</h5>
-                <a href="figures.html" class="btn btn-secondary"
+                <h5 class="card-title">Các nhân vật lịch sử</h5>
+                <a href="vietnam-figures.html" class="btn btn-secondary"
                   >Chi tiết thêm</a
                 >
               </div>
@@ -253,17 +275,15 @@
             <h5>Liên kết nhanh</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="vietnam-french-war.html">Kháng chiến chống Pháp</a>
+                <a href="dak-lak-history.html">TRANG CHỦ</a>
               </li>
+              <li><a href="dak-lak-places.html">LỊCH SỬ ĐẮK LẮK</a></li>
               <li>
-                <a href="vietnam-american-war.html">Kháng chiến chống Mỹ</a>
+                <a href="dak-lak-battles.html">LỊCH SỬ VIỆT NAM
+                </a>
               </li>
-              <li>
-                <a href="vietnam-battles.html">Các trận đánh nổi tiếng</a>
-              </li>
-              <li><a href="vietnam-figures.html">Nhân vật lịch sử</a></li>
-              <li><a href="quiz.html">Câu hỏi trắc nghiệm</a></li>
-              <li><a href="feedback.html">Phản hồi</a></li>
+              <li><a href="quiz.html">CÂU HỎI TRẮC NGHIỆM</a></li>
+              <li><a href="feedback.html">PHẢN HỒI</a></li>
             </ul>
           </div>
           <div class="col-md-4">

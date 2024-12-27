@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/dark-mode.css" />
     <link rel="stylesheet" href="./assets/css/battles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
       .title-section {
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -40,10 +41,13 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
         height: 100%;
+        position: relative;
+        z-index: 1;
       }
 
       .battle-card:hover {
         transform: translateY(-10px);
+        transition: transform 0.3s ease;
       }
 
       .card-image {
@@ -65,6 +69,8 @@
       .card-content {
         padding: 20px;
         background: var(--bg-color);
+        position: relative;
+        z-index: 2;
       }
 
       .battle-time {
@@ -74,17 +80,23 @@
         color: white;
         border-radius: 20px;
         margin-bottom: 10px;
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
       }
 
       .card-content h3 {
         font-size: 1.5rem;
         margin-bottom: 15px;
         color: var(--text-color);
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
       }
 
       .card-content p {
         color: var(--text-color);
         line-height: 1.6;
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
       }
 
       .btn-secondary {
@@ -162,74 +174,137 @@
         font-size: 1.5rem;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
       }
+
+      /* Ensure smooth animations */
+      .battle-card {
+        position: relative;
+        z-index: 1;
+      }
+
+      .card-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Optimize hover effects */
+      .battle-card:hover {
+        transform: translateY(-10px);
+        transition: transform 0.3s ease;
+      }
+
+      /* Ensure text remains crisp during animations */
+      .battle-time,
+      h3,
+      p {
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, #c41e3a, #8b0000);
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover:after {
+        width: 100%;
+      }
     </style>
   </head>
   <body class="light-mode">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="./assets/images/index/logo.png" alt="Logo" width="100" />
-        </a>
+    <!-- Thêm phần style này vào trong thẻ <style> của các file -->
+<style>
+  .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+  }
 
-        <button
-          class="navbar-toggler btn-nav"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
+  .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #c41e3a, #8b0000);
+    transition: all 0.3s ease;
+  }
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="dak-lak-history.html"
-                >Lịch sử hình thành và phát triển</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dak-lak-places.html"
-                >Địa danh lịch sử</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dak-lak-battles.html"
-                >Các trận đánh tiêu biểu</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dak-lak-figures.html"
-                >Nhân vật lịch sử</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="quiz.html">Câu hỏi Quiz</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="feedback.html">Phản hồi</a>
-            </li>
-          </ul>
-          <button id="darkModeToggle" class="btn-nav">
-            <i class="fas fa-moon"></i>
-          </button>
-        </div>
-      </div>
-    </nav>
+  .nav-link:hover:after {
+    width: 100%;
+  }
+</style>
 
+<!-- Phần HTML của navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="./assets/images/index/logo.png" alt="Logo" width="100" />
+    </a>
+
+    <button
+      class="navbar-toggler btn-nav"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="dak-lak-history.html">Lịch sử hình thành và phát triển</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dak-lak-places.html">Địa chỉ lịch Sử</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dak-lak-battles.html">Các trận đánh tiêu biểu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dak-lak-figures.html">Nhân vật lịch sử</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz.html">Câu hỏi Quiz</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="feedback.html">Phản hồi</a>
+        </li>
+      </ul>
+      <button id="darkModeToggle" class="btn-nav">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</nav>
     <section class="banner">
       <div class="video-background">
         <img
           src="./assets/images/battles/tran-doi-thit-bam.jpg"
           alt=""
-          srcset=""
+          data-aos="fade-in"
+          data-aos-duration="1000"
         />
 
         <div class="overlay"></div>
       </div>
       <div class="container">
         <div class="banner-content text-center">
-          <h1 class="display-4">Các Trận Đánh Tiêu Biểu</h1>
-          <p class="lead">Những chiến thắng lịch sử của quân dân Đắk Lắk</p>
+          <h1 class="display-4" 
+              data-aos="fade-down">Các Trận Đánh Tiêu Biểu</h1>
+          <p class="lead" 
+             data-aos="fade-up">Những chiến thắng lịch sử của quân dân Đắk Lắk</p>
         </div>
       </div>
     </section>
@@ -237,7 +312,8 @@
     <section class="battles-section py-5">
       <div class="container-fluid px-4">
         <div class="row mb-4">
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" 
+               data-aos="fade-up">
             <div class="battle-card">
               <div class="card-image">
                 <img
@@ -266,7 +342,9 @@
             </div>
           </div>
 
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" 
+               data-aos="fade-up" 
+               data-aos-delay="100">
             <div class="battle-card">
               <div class="card-image">
                 <img
@@ -297,7 +375,9 @@
             </div>
           </div>
 
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" 
+               data-aos="fade-up" 
+               data-aos-delay="200">
             <div class="battle-card">
               <div class="card-image">
                 <img
@@ -328,7 +408,10 @@
         </div>
 
         <div class="row">
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" 
+               data-aos="fade-up" 
+               data-aos-duration="800" 
+               data-aos-delay="200">
             <div class="battle-card">
               <div class="card-image">
                 <img
@@ -350,65 +433,6 @@
                   class="btn btn-secondary"
                   data-bs-toggle="modal"
                   data-bs-target="#mauThanModal"
-                >
-                  Tìm hiểu thêm
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <div class="battle-card">
-              <div class="card-image">
-                <img
-                  src="./assets/images/battles/tran-doi-thit-bam.jpg"
-                  alt="Trận Đồi Thịt Băm"
-                />
-              </div>
-              <div class="card-content">
-                <div class="battle-time">1969</div>
-                <h3>Trận Đồi Thịt Băm (10/5 - 20/5/1969)</h3>
-                <p>
-                  Trận Đồi A Bia (10-20/5/1969) tại Thừa Thiên-Huế chứng kiến
-                  quân đội Mỹ với 2.000 binh sĩ cùng pháo binh và không quân tấn
-                  công một ngọn đồi do lực lượng Mặt trận Dân tộc Giải phóng
-                  miền Nam Việt Nam chiếm giữ. Dù chiếm được đồi sau 10 ngày
-                  giao tranh ác liệt, quân Mỹ đã rút lui một tháng sau đó, để
-                  lại nhiều tổn thất.
-                </p>
-                <button
-                  class="btn btn-secondary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#tranDoiThitBamModal"
-                >
-                  Tìm hiểu thêm
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <div class="battle-card">
-              <div class="card-image">
-                <img
-                  src="./assets/images/battles/ho-chi-minh.jpg"
-                  alt="Chiến dịch Hồ Chí Minh"
-                />
-              </div>
-              <div class="card-content">
-                <div class="battle-time">1975</div>
-                <h3>Chiến dịch Hồ Chí Minh (30/4/1975)</h3>
-                <p>
-                  Chiến dịch Hồ Chí Minh lịch sử trong cuộc Tổng tiến công mùa
-                  Xuân năm 1975 đã đánh dấu sự kết thúc của cuộc kháng chiến
-                  chống Mỹ và giải phóng hoàn toàn miền Nam, thống nhất đất
-                  nước. Chiến dịch này thực hiện chỉ thị của Chủ tịch Hồ Chí
-                  Minh: "Đánh cho Mỹ cút, đánh cho ngụy nhào."
-                </p>
-                <button
-                  class="btn btn-secondary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#hoChiMinhModal"
                 >
                   Tìm hiểu thêm
                 </button>
@@ -526,53 +550,7 @@
           <div class="modal-body">
             <div class="ratio ratio-16x9">
               <iframe
-                src="https://www.youtube.com/embed/1J9J9e1Q2Zk"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="tranDoiThitBamModal" tabindex="-1">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Trận Đồi Thịt Băm (10/5 - 20/5/1969)</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/wP1KMZ02DRc"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="hoChiMinhModal" tabindex="-1">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Chiến dịch Hồ Chí Minh (30/4/1975)</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/TLXfUESIWQc"
+                src="https://www.youtube.com/embed/B2jz0SVlqXE?si=-w23nnk42Vi4xVhe"
                 allowfullscreen
               ></iframe>
             </div>
@@ -591,17 +569,15 @@
             <h5>Liên kết nhanh</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="dak-lak-history.html"
-                  >Lịch sử hình thành và phát triển</a
-                >
+                <a href="dak-lak-history.html">TRANG CHỦ</a>
               </li>
-              <li><a href="dak-lak-places.html">Địa danh lịch sử</a></li>
+              <li><a href="dak-lak-places.html">LỊCH SỬ ĐẮK LẮK</a></li>
               <li>
-                <a href="dak-lak-battles.html">Các trận đánh tiêu biểu</a>
+                <a href="dak-lak-battles.html">LỊCH SỬ VIỆT NAM
+                </a>
               </li>
-              <li><a href="dak-lak-figures.html">Nhân vật lịch sử</a></li>
-              <li><a href="quiz.html">Câu hỏi trắc nghiệm</a></li>
-              <li><a href="feedback.html">Phản hồi</a></li>
+              <li><a href="quiz.html">CÂU HỎI TRẮC NGHIỆM</a></li>
+              <li><a href="feedback.html">PHẢN HỒI</a></li>
             </ul>
           </div>
           <div class="col-md-4">
@@ -622,5 +598,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/dark-mode.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 100,
+          easing: 'ease',
+        });
+      });
+    </script>
   </body>
 </html>

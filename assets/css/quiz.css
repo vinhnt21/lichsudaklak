@@ -57,6 +57,12 @@
   color: white !important;
 }
 
+/* Đảm bảo hiệu ứng hover không ảnh hưởng đến màu sắc đáp án */
+.option-btn.correct:hover,
+.option-btn.incorrect:hover {
+  opacity: 0.9;
+}
+
 /* Dark mode styles */
 body.dark-mode .option-btn {
   background-color: var(--dark-bg-nav);
@@ -68,7 +74,7 @@ body.dark-mode .option-btn:hover:not([disabled]) {
   background-color: var(--dark-btn);
 }
 
-/* Đảm bảo màu đáp án đúng/sai vẫn hiển thị trong dark mode */
+/* Đảm bảo màu sắc trong dark mode */
 body.dark-mode .option-btn.correct {
   background-color: #28a745 !important;
   border-color: #28a745 !important;

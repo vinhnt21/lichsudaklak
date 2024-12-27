@@ -190,12 +190,10 @@
     </nav>
     <section class="banner">
       <div class="container">
-        <div class="banner-content text-center">
-          <h1 class="display-4 fw-bold">LỊCH SỬ HÌNH THÀNH VÀ PHÁT TRIỂN</h1>
-          <h2 class="h3 mb-4">THẾ KỶ XII - NAY</h2>
-          <button class="btn btn-light btn-lg" onclick="scrollToIntro()">
-            Khám phá ngay
-          </button>
+        <div class="banner-content text-center" data-aos="fade-down" data-aos-duration="1200">
+          <h1 class="display-4 fw-bold" data-aos="zoom-in" data-aos-delay="300">LỊCH SỬ HÌNH THÀNH VÀ PHÁT TRIỂN</h1>
+          <h2 class="h3 mb-4" data-aos="zoom-in" data-aos-delay="500">THẾ KỶ XII - NAY</h2>
+          <button class="btn btn-light btn-lg" data-aos="fade-up" data-aos-delay="700">Khám phá ngay</button>
         </div>
       </div>
     </section>
@@ -203,7 +201,7 @@
     <section id="intro" class="py-5">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-8" data-aos="fade-right">
+          <div class="col-lg-8" data-aos="fade-right" data-aos-duration="1000">
             <h2>Lịch sử hình thành và phát triển của Buôn Ma Thuột</h2>
             <h3>Từ buôn làng đến thành phố - Trung tâm của Tây Nguyên</h3>
             <p class="intro-text">
@@ -225,11 +223,13 @@
               bào các dân tộc thiểu số.
             </p>
           </div>
-          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="200">
+          <div class="col-lg-4" data-aos="fade-left" data-aos-duration="1000">
             <img
               src="./assets/images/french-war/BMTCU.jpg"
               alt="Buôn Ma Thuột thời kỳ đầu"
               class="img-fluid rounded"
+              data-aos="flip-left"
+              data-aos-delay="200"
             />
           </div>
         </div>
@@ -239,7 +239,7 @@
     <section id="timeline" class="py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-md-3 mb-4" data-aos="flip-left" data-aos-delay="100">
             <div class="timeline-card" onclick="scrollToEvent('early-history')">
               <h4>Thời kỳ đầu (1540)</h4>
               <p class="time">1540</p>
@@ -253,7 +253,7 @@
             </div>
           </div>
 
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-md-3 mb-4" data-aos="flip-right" data-aos-delay="200">
             <div
               class="timeline-card"
               onclick="scrollToEvent('french-invasion')"
@@ -269,7 +269,7 @@
             </div>
           </div>
 
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-md-3 mb-4" data-aos="flip-up" data-aos-delay="300">
             <div class="timeline-card" onclick="scrollToEvent('resistance')">
               <h4>Thời kỳ kháng chiến (1890-1935)</h4>
               <p class="time">1890-1935</p>
@@ -284,7 +284,7 @@
             </div>
           </div>
 
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-md-3 mb-4" data-aos="flip-down" data-aos-delay="400">
             <div class="timeline-card" onclick="scrollToEvent('revolution')">
               <h4>Cách mạng Tháng Tám (1945)</h4>
               <p class="time">1945</p>
@@ -296,67 +296,12 @@
               </p>
             </div>
           </div>
-
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="timeline-card"
-              onclick="scrollToEvent('french-invasion')"
-            >
-              <h4>Thời kỳ Pháp xâm lược (1898-1904)</h4>
-              <p class="time">1898-1904</p>
+          <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="400"></div>
+            <div class="timeline-card" onclick="scrollToEvent('american-war')">
+              <h4>Kháng chiến chống Mỹ (1961-1975)</h4>
+              <p class="time">1961-1975</p>
               <p class="description">
-                Vào những năm cuối thế kỷ XIX, thực dân Pháp đã đẩy mạnh các
-                hoạt động do thám. Đến năm 1898, chúng tập trung lực lượng đánh
-                chiếm Buôn Đôn và lần lượt mở rộng chiến tranh đánh chiếm toàn
-                bộ cao nguyên Đắk Lắk.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="timeline-card"
-              onclick="scrollToEvent('french-invasion')"
-            >
-              <h4>Thời kỳ Pháp xâm lược (1898-1904)</h4>
-              <p class="time">1898-1904</p>
-              <p class="description">
-                Vào những năm cuối thế kỷ XIX, thực dân Pháp đã đẩy mạnh các
-                hoạt động do thám. Đến năm 1898, chúng tập trung lực lượng đánh
-                chiếm Buôn Đôn và lần lượt mở rộng chiến tranh đánh chiếm toàn
-                bộ cao nguyên Đắk Lắk.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="timeline-card"
-              onclick="scrollToEvent('french-invasion')"
-            >
-              <h4>Thời kỳ Pháp xâm lược (1898-1904)</h4>
-              <p class="time">1898-1904</p>
-              <p class="description">
-                Vào những năm cuối thế kỷ XIX, thực dân Pháp đã đẩy mạnh các
-                hoạt động do thám. Đến năm 1898, chúng tập trung lực lượng đánh
-                chiếm Buôn Đôn và lần lượt mở rộng chiến tranh đánh chiếm toàn
-                bộ cao nguyên Đắk Lắk.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="timeline-card"
-              onclick="scrollToEvent('french-invasion')"
-            >
-              <h4>Thời kỳ Pháp xâm lược (1898-1904)</h4>
-              <p class="time">1898-1904</p>
-              <p class="description">
-                Vào những năm cuối thế kỷ XIX, thực dân Pháp đã đẩy mạnh các
-                hoạt động do thám. Đến năm 1898, chúng tập trung lực lượng đánh
-                chiếm Buôn Đôn và lần lượt mở rộng chiến tranh đánh chiếm toàn
-                bộ cao nguyên Đắk Lắk.
+                Trong cuộc kháng chiến chống Mỹ, Đắk Lắk là một trong những chiến trường quan trọng của miền Nam. Từ những năm đầu thập niên 1960, quân và dân Đắk Lắk đã kiên cường chống lại các cuộc tấn công của quân đội Mỹ và ngụy, đồng thời tham gia vào các chiến dịch lớn như Chiến dịch Tây Nguyên. Nhờ có sự hỗ trợ của quân đội miền Bắc và sự đồng lòng của nhân dân, Đắk Lắk đã trở thành một trong những nơi bùng nổ các cuộc tấn công mạnh mẽ vào các căn cứ của quân Mỹ và chính quyền Sài Gòn, góp phần làm suy yếu sức mạnh của đế quốc Mỹ và đẩy mạnh phong trào giải phóng miền Nam. Sau chiến thắng trong các trận đánh quan trọng, Đắk Lắk trở thành vùng đất biểu tượng của lòng yêu nước và tinh thần chiến đấu quật cường.
               </p>
             </div>
           </div>
@@ -366,9 +311,9 @@
 
     <section id="early-history" class="event-section py-5">
       <div class="container">
-        <h2>Thời kỳ đầu (1540)</h2>
+        <h2 data-aos="fade-right" data-aos-duration="1000">Thời kỳ đầu (1540)</h2>
         <div class="row align-items-center">
-          <div class="col-lg-6" data-aos="fade-right">
+          <div class="col-lg-6" data-aos="slide-right" data-aos-duration="1200">
             <p>
               Năm 1540, khi Bùi Tá Hán được triều đình cử làm Tuần Tiết xứ Nam
               Ngãi, kiêm cả các vùng dân tộc miền núi phía Tây. Ông đã cho di
@@ -382,11 +327,14 @@
               xâm lược của quân Xiêm.
             </p>
           </div>
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <div class="col-lg-6">
             <img
               src="./assets/images/french-war/TAYNGUYENXUA.jpg"
               alt="Tây Nguyên thời kỳ đầu"
               class="img-fluid rounded"
+              data-aos="zoom-in-left"
+              data-aos-delay="300"
+              data-aos-duration="1000"
             />
           </div>
         </div>
@@ -395,16 +343,19 @@
 
     <section id="french-invasion" class="event-section py-5">
       <div class="container">
-        <h2>Thời kỳ Pháp xâm lược (1898-1904)</h2>
+        <h2 data-aos="fade-left" data-aos-duration="1000">Thời kỳ Pháp xâm lược (1898-1904)</h2>
         <div class="row align-items-center">
-          <div class="col-lg-6" data-aos="fade-right">
+          <div class="col-lg-6">
             <img
               src="./assets/images/french-war/TAYNGUYEN.jpg"
               alt="Thực dân Pháp xâm lược"
               class="img-fluid rounded"
+              data-aos="zoom-in-right"
+              data-aos-delay="300"
+              data-aos-duration="1000"
             />
           </div>
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <div class="col-lg-6" data-aos="slide-left" data-aos-duration="1200">
             <p>
               Vào những năm cuối thế kỷ XIX, thực dân Pháp đã đẩy mạnh các hoạt
               động do thám, nắm tình hình dưới nhiều danh nghĩa khác nhau, nhằm
@@ -425,15 +376,10 @@
 
     <section id="resistance" class="event-section py-5">
       <div class="container">
-        <h2>Thời kỳ kháng chiến (1890-1935)</h2>
+        <h2 data-aos="fade-down" data-aos-duration="1000">Thời kỳ kháng chiến (1890-1935)</h2>
         <div class="row align-items-center">
-          <div class="col-lg-6">
-            <p>
-              Trong những năm cuối thế kỷ XIX đầu thế kỷ XX, trong tỉnh liên tục
-              nổ ra các cuộc khởi nghĩa và đấu tranh vũ trang. Tiêu biểu là các
-              cuộc khởi nghĩa:
-            </p>
-            <ul>
+          <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1200">
+            <ul data-aos="fade-up" data-aos-delay="300">
               <li>Cuộc khởi nghĩa của Ama Jhao (1890-1904)</li>
               <li>Cuộc đấu tranh của N'Trang Gưh (1900-1914)</li>
               <li>Cuộc khởi nghĩa của Oi H'Mai (1903-1909)</li>
@@ -455,6 +401,9 @@
               src="./assets/images/french-war/TAYNGUYEN2.jpg"
               alt="Cuộc kháng chiến chống Pháp"
               class="img-fluid rounded"
+              data-aos="zoom-in-left"
+              data-aos-delay="400"
+              data-aos-duration="1000"
             />
           </div>
         </div>
@@ -463,13 +412,16 @@
 
     <section id="revolution" class="event-section py-5">
       <div class="container">
-        <h2>Cách mạng Tháng Tám và những năm tiếp theo</h2>
+        <h2 data-aos="zoom-in-up" data-aos-duration="1000">Cách mạng Tháng Tám và những năm tiếp theo</h2>
         <div class="row align-items-center">
           <div class="col-lg-6">
             <img
               src="./assets/images/french-war/NGUOITAYNGUYEN.jpg"
               alt="Cách mạng Tháng Tám"
               class="img-fluid rounded"
+              data-aos="zoom-in-left"
+              data-aos-delay="300"
+              data-aos-duration="1000"
             />
           </div>
           <div class="col-lg-6">
@@ -498,11 +450,39 @@
         </div>
       </div>
     </section>
+    <section id="american-war" class="event-section py-5">
+      <div class="container">
+        <h2>Kháng chiến chống Mỹ (1961-1975)</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="./assets/images/french-war/CHONGMY.jpg"
+              alt="Kháng chiến chống Mỹ ở Tây Nguyên"
+              class="img-fluid rounded"
+              data-aos="zoom-in-left"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            />
+          </div>
+          <div class="col-lg-6">
+            <p>
+              Trong cuộc kháng chiến chống Mỹ, Đắk Lắk giữ vị trí chiến lược quan trọng tại Tây Nguyên. Từ năm 1961-1965, quân và dân Đắk Lắk đã đánh bại nhiều cuộc hành quân càn quét của địch, phá vỡ kế hoạch bình định của Mỹ-ngụy, giải phóng nhiều vùng nông thôn rộng lớn.
+            </p>
+            <p>
+              Giai đoạn 1965-1968, Đắk Lắk trở thành một trong những chiến trường ác liệt. Quân và dân trong tỉnh đã chiến đấu anh dũng, đánh bại chiến lược "Chiến tranh cục bộ" của Mỹ, tiêu biểu là các trận đánh ở Buôn Briêng, Buôn Hồ và đặc biệt là chiến thắng trong đợt Tổng tiến công Tết Mậu Thân 1968.
+            </p>
+            <p>
+              Từ 1969-1975, phong trào đấu tranh của quân dân Đắk Lắk ngày càng phát triển mạnh mẽ. Đỉnh cao là chiến thắng Buôn Ma Thuột (10/3/1975) - trận đánh then chốt mở màn cho Chiến dịch Tây Nguyên và góp phần quan trọng vào thắng lợi của chiến dịch Hồ Chí Minh lịch sử, giải phóng hoàn toàn miền Nam.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="conclusion" class="py-5">
       <div class="container">
-        <h2 data-aos="fade-up">Ý nghĩa lịch sử</h2>
-        <p data-aos="fade-up" data-aos-delay="200">
+        <h2 data-aos="zoom-in-up" data-aos-duration="1000">Ý nghĩa lịch sử</h2>
+        <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200">
           Lịch sử hình thành và phát triển của Buôn Ma Thuột là minh chứng cho
           tinh thần đoàn kết, bất khuất của các dân tộc Tây Nguyên trong công
           cuộc đấu tranh giành độc lập, tự do. Từ một vùng đất hoang sơ, qua
@@ -512,7 +492,6 @@
         </p>
       </div>
     </section>
-
     <footer class="footer py-5">
       <div class="container">
         <div class="row">
@@ -523,17 +502,15 @@
             <h5>Liên kết nhanh</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="dak-lak-history.html"
-                  >Lịch sử hình thành và phát triển</a
-                >
+                <a href="dak-lak-history.html">TRANG CHỦ</a>
               </li>
-              <li><a href="dak-lak-places.html">Địa danh lịch sử</a></li>
+              <li><a href="dak-lak-places.html">LỊCH SỬ ĐẮK LẮK</a></li>
               <li>
-                <a href="dak-lak-battles.html">Các trận đánh tiêu biểu</a>
+                <a href="dak-lak-battles.html">LỊCH SỬ VIỆT NAM
+                </a>
               </li>
-              <li><a href="dak-lak-figures.html">Nhân vật lịch sử</a></li>
-              <li><a href="quiz.html">Câu hỏi trắc nghiệm</a></li>
-              <li><a href="feedback.html">Phản hồi</a></li>
+              <li><a href="quiz.html">CÂU HỎI TRẮC NGHIỆM</a></li>
+              <li><a href="feedback.html">PHẢN HỒI</a></li>
             </ul>
           </div>
           <div class="col-md-4">
@@ -558,10 +535,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 150,
-        easing: "ease-in-out",
+        duration: 800,
+        once: false,
+        offset: 100,
+        easing: 'ease-out',
+        delay: 100,
+        anchorPlacement: 'top-bottom',
       });
     </script>
   </body>

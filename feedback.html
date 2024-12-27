@@ -17,6 +17,28 @@
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/dark-mode.css" />
     <link rel="stylesheet" href="./assets/css/feedback.css" />
+    <style>
+      /* Thêm hiệu ứng underline cho navbar links */
+      .navbar .nav-link {
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      .navbar .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, #B8860B, #FFD700, #DAA520, #996515);
+        transition: width 0.3s ease-in-out;
+      }
+
+      .navbar .nav-link:hover::after {
+        width: 100%;
+      }
+    </style>
   </head>
   <body class="light-mode">
     <nav class="navbar navbar-expand-lg">
@@ -138,10 +160,16 @@
           <div class="col-md-4">
             <h5>Liên kết nhanh</h5>
             <ul class="list-unstyled">
-              <li><a href="dak-lak.html">Lịch sử Đắk Lắk</a></li>
-              <li><a href="vietnam-history.html">Lịch sử Việt Nam</a></li>
-              <li><a href="quiz.html">Câu hỏi trắc nghiệm</a></li>
-              <li><a href="feedback.html">Phản hồi</a></li>
+              <li>
+                <a href="dak-lak-history.html">TRANG CHỦ</a>
+              </li>
+              <li><a href="dak-lak-places.html">LỊCH SỬ ĐẮK LẮK</a></li>
+              <li>
+                <a href="dak-lak-battles.html">LỊCH SỬ VIỆT NAM
+                </a>
+              </li>
+              <li><a href="quiz.html">CÂU HỎI TRẮC NGHIỆM</a></li>
+              <li><a href="feedback.html">PHẢN HỒI</a></li>
             </ul>
           </div>
           <div class="col-md-4">

@@ -7,7 +7,7 @@ class Quiz {
     this.userAnswers = new Array(this.questions.length).fill(null);
     this.answeredQuestions = new Set();
     this.startTime = new Date();
-
+    
     this.initializeQuiz();
   }
 
@@ -17,11 +17,11 @@ class Quiz {
     this.userAnswers = new Array(this.questions.length).fill(null);
     this.answeredQuestions.clear();
     this.startTime = new Date();
-
+    
     document.getElementById("results").classList.add("d-none");
     document.getElementById("quizContent").classList.remove("d-none");
     document.getElementById("progressBar").style.width = "0%";
-
+    
     this.updateQuestion();
     this.updateProgress();
   }
@@ -35,10 +35,9 @@ class Quiz {
     const answeredQuestions = this.answeredQuestions.size;
     const correctAnswers = this.score;
     const wrongAnswers = answeredQuestions - correctAnswers;
-    const percentage =
-      answeredQuestions > 0
-        ? Math.round((correctAnswers / answeredQuestions) * 100)
-        : 0;
+    const percentage = answeredQuestions > 0 
+      ? Math.round((correctAnswers / answeredQuestions) * 100) 
+      : 0;
 
     document.getElementById("quizContent").classList.add("d-none");
     document.getElementById("results").classList.remove("d-none");
@@ -46,9 +45,8 @@ class Quiz {
     document.getElementById("correctAnswers").textContent = correctAnswers;
     document.getElementById("wrongAnswers").textContent = wrongAnswers;
     document.getElementById("percentage").textContent = percentage;
-    document.getElementById(
-      "timeSpent"
-    ).textContent = `${minutes} phút ${seconds} giây`;
+    document.getElementById("timeSpent").textContent = 
+      `${minutes} phút ${seconds} giây`;
   }
 
   getCategoryTitle() {
@@ -57,17 +55,13 @@ class Quiz {
       american: "Kháng chiến chống Mỹ",
       battles: "Những trận đánh nổi tiếng",
       figures: "Các nhân vật lịch sử",
-      daklak_french: "Kháng chiến chống Pháp tại Đắk Lắk",
-      daklak_american: "Kháng chiến chống Mỹ tại Đắk Lắk",
-      daklak_battles: "Những trận đánh nổi tiếng tại Đắk Lắk",
-      daklak_figures: "Các nhân vật lịch sử Đắk Lắk",
     };
     return titles[this.category];
   }
 
   initializeQuiz() {
     document.getElementById("quizTitle").textContent = this.getCategoryTitle();
-
+    
     this.updateQuestion();
     this.updateProgress();
 
@@ -182,13 +176,13 @@ class Quiz {
     this.userAnswers = new Array(this.questions.length).fill(null);
     this.answeredQuestions.clear();
     this.startTime = new Date();
-
+    
     document.getElementById("results").classList.add("d-none");
     document.getElementById("quizContent").classList.add("d-none");
     document.querySelector(".quiz-container .row").classList.remove("d-none");
-
+    
     document.getElementById("progressBar").style.width = "0%";
-
+    
     window.currentQuiz = null;
   }
 }
@@ -198,11 +192,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelectorAll(".quiz-category").forEach((category) => {
     category.addEventListener("click", () => {
       const categoryType = category.dataset.category;
-
+      
       if (window.currentQuiz) {
         window.currentQuiz = null;
       }
-
+      
       document.querySelector(".quiz-container .row").classList.add("d-none");
       document.getElementById("quizContent").classList.remove("d-none");
       window.currentQuiz = new Quiz(categoryType);
@@ -218,19 +212,17 @@ let seconds = 0;
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
-  return `${minutes.toString().padStart(2, "0")}:${remainingSeconds
-    .toString()
-    .padStart(2, "0")}`;
+  return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
 }
 
 // Hàm bắt đầu đếm thời gian
 function startTimer() {
-  console.log("startTimer called");
+  console.log('startTimer called');
   timerInterval = setInterval(() => {
     seconds++;
     const timeString = formatTime(seconds);
-    document.getElementById("timeLeft").textContent = timeString;
-    console.log("Current time:", timeString);
+    document.getElementById('timeLeft').textContent = timeString;
+    console.log('Current time:', timeString);
   }, 1000);
 }
 
@@ -244,44 +236,44 @@ function stopTimer() {
 function startQuiz(category) {
   currentCategory = category;
   loadQuestions(category);
-
+  
   // Reset và bắt đầu đồng hồ
   seconds = 0;
   if (timerInterval) {
-    clearInterval(timerInterval); // Xóa interval cũ nếu có
+      clearInterval(timerInterval); // Xóa interval cũ nếu có
   }
-  document.getElementById("timeLeft").textContent = "00:00";
+  document.getElementById('timeLeft').textContent = '00:00';
   startTimer();
-
+  
   // Hiển thị quiz
-  document.querySelector(".quiz-container .row").classList.add("d-none");
-  document.getElementById("quizContent").classList.remove("d-none");
-
+  document.querySelector('.quiz-container .row').classList.add('d-none');
+  document.getElementById('quizContent').classList.remove('d-none');
+  
   // Log để debug
-  console.log("Timer started");
+  console.log('Timer started');
 }
 
 // Sửa đổi hàm kết thúc quiz để dừng đồng hồ
 function showResults() {
   const timeSpent = stopTimer(); // Dừng đồng hồ và lấy thời gian
   // ... code hiện tại ...
-  document.getElementById("timeSpent").textContent = timeSpent;
+  document.getElementById('timeSpent').textContent = timeSpent;
   // ... code hiện tại ...
 }
 
 // Sửa đổi hàm retry để reset đồng hồ
-document.getElementById("retryBtn").addEventListener("click", () => {
+document.getElementById('retryBtn').addEventListener('click', () => {
   seconds = 0;
-  document.getElementById("timeLeft").textContent = "00:00";
+  document.getElementById('timeLeft').textContent = '00:00';
   startQuiz(currentCategory);
 });
 
 // Thêm event listener cho các nút "Bắt đầu"
-document.querySelectorAll(".start-quiz").forEach((button) => {
-  button.addEventListener("click", function () {
-    const category = this.closest(".quiz-category").dataset.category;
-    startQuiz(category);
-    // Kiểm tra xem đồng hồ có chạy không
-    console.log("Bắt đầu quiz với category:", category);
+document.querySelectorAll('.start-quiz').forEach(button => {
+  button.addEventListener('click', function() {
+      const category = this.closest('.quiz-category').dataset.category;
+      startQuiz(category);
+      // Kiểm tra xem đồng hồ có chạy không
+      console.log('Bắt đầu quiz với category:', category);
   });
 });

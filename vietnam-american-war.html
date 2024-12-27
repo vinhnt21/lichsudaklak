@@ -19,6 +19,29 @@
     <link rel="stylesheet" href="./assets/css/dark-mode.css" />
     <link rel="stylesheet" href="./assets/css/american-war.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      /* Thêm hiệu ứng underline cho navbar links */
+      .navbar .nav-link {
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      .navbar .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #D35400; /* Màu xanh lá Material Design */
+        transition: width 0.3s ease-in-out;
+      }
+
+      .navbar .nav-link:hover::after {
+        width: 100%;
+      }
+    </style>
   </head>
   <body class="light-mode">
     <nav class="navbar navbar-expand-lg">
@@ -257,7 +280,7 @@
               kế hoạch tấn công vào dịp Tết. Kế hoạch tập trung vào gây bất ngờ
               chiến lược, đánh vào đầu não địch ở đô thị. Cuộc tổng tiến công
               được chuẩn bị kỹ lưỡng: huy động lực lượng vũ trang, tổ chức
-              kh���i nghĩa, điều động lực lượng chính trị, và phân chia chiến
+              khởi nghĩa, điều động lực lượng chính trị, và phân chia chiến
               trường. Chiến dịch bắt đầu vào Tết Mậu Thân, gây thiệt hại nặng nề
               cho Mỹ và đồng minh, đồng thời tạo cú sốc lớn trong dư luận Mỹ và
               thế giới.
@@ -335,7 +358,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="parisModalLabel">
-              Hi���p định Paris 1973
+              Hiệp định Paris 1973
             </h5>
             <button
               type="button"
@@ -368,7 +391,7 @@
             <h6>
               Hiệp định Paris là thắng lợi của cuộc đấu tranh ngoại giao của
               Việt Nam, buộc Mỹ phải rút quân, tạo điều kiện thuận lợi cho cách
-              mạng miền Nam tiến tới giải phóng hoàn toàn.
+              mạng mi��n Nam tiến tới giải phóng hoàn toàn.
             </h6>
           </div>
           <div class="modal-footer">
@@ -517,17 +540,15 @@
             <h5>Liên kết nhanh</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="vietnam-french-war.html">Kháng chiến chống Pháp</a>
+                <a href="dak-lak-history.html">TRANG CHỦ</a>
               </li>
+              <li><a href="dak-lak-places.html">LỊCH SỬ ĐẮK LẮK</a></li>
               <li>
-                <a href="vietnam-american-war.html">Kháng chiến chống Mỹ</a>
+                <a href="dak-lak-battles.html">LỊCH SỬ VIỆT NAM
+                </a>
               </li>
-              <li>
-                <a href="vietnam-battles.html">Các trận đánh nổi tiếng</a>
-              </li>
-              <li><a href="vietnam-figures.html">Nhân vật lịch sử</a></li>
-              <li><a href="quiz.html">Câu hỏi Trắc Nghiệm</a></li>
-              <li><a href="feedback.html">Phản hồi</a></li>
+              <li><a href="quiz.html">CÂU HỎI TRẮC NGHIỆM</a></li>
+              <li><a href="feedback.html">PHẢN HỒI</a></li>
             </ul>
           </div>
           <div class="col-md-4">
